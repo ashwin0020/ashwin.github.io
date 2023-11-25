@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: blanchedalmond;
+            text-align: center;
+            height: 250px;
+            font-size:35px;
+            border: 5px solid brown;
+            border-radius: 20px;
+        }
+
+        #time{
+        
+            /* background-color: black;
+            color:white; */
+            
+            font-weight: bold;
+            user-select: none;
+            
+        }
+        button{
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Current Time is</h1>
+        <span id="time"></span>
+
+    </div>
+    <div class="anothercontainer">
+        <!-- <input type="button" value="Click here to see Time" id="timebtn" onclick="displaytime2()"><br> -->
+        <button id="button" onclick="displaytime2()">Click here!</button><br>
+        <span id="timeagain"></span>
+    </div>
+    <script>
+        // date=new Date;
+        // console.log(date);
+        function displaytime(){
+            let hours= new Date().getHours() ;
+            let minutes= new Date().getMinutes() ;
+            let seconds= new Date().getSeconds() ;
+            let time= hours + ":" + minutes + ":" + seconds;
+            // console.log(time);
+            document.getElementById('time').innerHTML =time;
+            // document.getElementById('time').innerHTML =minutes;
+            // document.getElementById('time').innerHTML =Seconds;
+        }
+        setInterval(displaytime, 1000);
+
+        function displaytime2(){
+            let time2= new Date();
+            document.getElementById('timeagain').innerHTML  = time2;
+
+        }
+
+        // setInterval(displaytime2, 1000);
+    </script>
+</body>
+</html>
